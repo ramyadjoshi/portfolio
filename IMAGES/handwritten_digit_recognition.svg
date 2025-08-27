@@ -1,0 +1,157 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+    
+    <linearGradient id="digitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Header -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="url(#titleGradient)">
+    Handwritten Digit Recognition
+  </text>
+  
+  <text x="400" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">
+    CNN Model trained on MNIST Dataset
+  </text>
+  
+  <!-- Main Container -->
+  <rect x="50" y="100" width="700" height="450" rx="20" fill="url(#cardGradient)" stroke="rgba(148, 163, 184, 0.2)" stroke-width="1"/>
+  
+  <!-- Input Section -->
+  <rect x="80" y="130" width="200" height="200" rx="15" fill="#000" stroke="#334155" stroke-width="2"/>
+  <text x="180" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">
+    Input Image (28x28)
+  </text>
+  
+  <!-- Handwritten digit "7" -->
+  <g transform="translate(180, 215)" fill="white" stroke="white" stroke-width="8" stroke-linecap="round">
+    <path d="M-40,-30 L40,-30 L40,-20 L-20,40" fill="none"/>
+    <animate attributeName="stroke-dasharray" values="0,200;120,200;120,200" dur="3s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- CNN Architecture -->
+  <rect x="320" y="130" width="160" height="200" rx="15" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#3b82f6">
+    CNN Architecture
+  </text>
+  
+  <!-- CNN Layers -->
+  <rect x="340" y="170" width="120" height="25" rx="5" fill="#3b82f6" opacity="0.8"/>
+  <text x="400" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Conv2D + ReLU</text>
+  
+  <rect x="340" y="205" width="120" height="25" rx="5" fill="#1d4ed8" opacity="0.8"/>
+  <text x="400" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">MaxPooling2D</text>
+  
+  <rect x="340" y="240" width="120" height="25" rx="5" fill="#3b82f6" opacity="0.8"/>
+  <text x="400" y="257" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Conv2D + ReLU</text>
+  
+  <rect x="340" y="275" width="120" height="25" rx="5" fill="#1d4ed8" opacity="0.8"/>
+  <text x="400" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Dense + Softmax</text>
+  
+  <!-- Arrows -->
+  <path d="M290,230 L310,230" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M490,230 L510,230" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  
+  <!-- Output Section -->
+  <rect x="520" y="130" width="200" height="200" rx="15" fill="url(#cardGradient)" stroke="#334155" stroke-width="2"/>
+  <text x="620" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">
+    Prediction
+  </text>
+  
+  <!-- Large predicted digit -->
+  <text x="620" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="80" font-weight="700" fill="url(#digitGradient)" filter="url(#glow)">
+    7
+  </text>
+  
+  <!-- Confidence -->
+  <text x="620" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#10b981">
+    Confidence: 98.7%
+  </text>
+  
+  <!-- Probability Distribution -->
+  <rect x="80" y="360" width="640" height="150" rx="15" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(148, 163, 184, 0.2)" stroke-width="1"/>
+  <text x="400" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">
+    Probability Distribution
+  </text>
+  
+  <!-- Probability bars for digits 0-9 -->
+  <g transform="translate(120, 410)">
+    <!-- Digit labels -->
+    <text x="25" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">0</text>
+    <text x="85" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">1</text>
+    <text x="145" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">2</text>
+    <text x="205" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">3</text>
+    <text x="265" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">4</text>
+    <text x="325" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">5</text>
+    <text x="385" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">6</text>
+    <text x="445" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#10b981">7</text>
+    <text x="505" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">8</text>
+    <text x="565" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">9</text>
+    
+    <!-- Probability bars -->
+    <rect x="20" y="45" width="10" height="5" fill="#4b5563"/>
+    <rect x="80" y="40" width="10" height="10" fill="#4b5563"/>
+    <rect x="140" y="42" width="10" height="8" fill="#4b5563"/>
+    <rect x="200" y="44" width="10" height="6" fill="#4b5563"/>
+    <rect x="260" y="46" width="10" height="4" fill="#4b5563"/>
+    <rect x="320" y="43" width="10" height="7" fill="#4b5563"/>
+    <rect x="380" y="41" width="10" height="9" fill="#4b5563"/>
+    <rect x="440" y="10" width="10" height="40" fill="#10b981"/> <!-- Digit 7 - highest probability -->
+    <rect x="500" y="45" width="10" height="5" fill="#4b5563"/>
+    <rect x="560" y="47" width="10" height="3" fill="#4b5563"/>
+  </g>
+  
+  <!-- MNIST Info -->
+  <rect x="80" y="530" width="200" height="40" rx="8" fill="rgba(245, 158, 11, 0.1)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="180" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f59e0b">
+    MNIST Dataset
+  </text>
+  <text x="180" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">
+    70,000 handwritten digits
+  </text>
+  
+  <!-- Model Info -->
+  <rect x="520" y="530" width="200" height="40" rx="8" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="620" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#3b82f6">
+    CNN Model
+  </text>
+  <text x="620" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">
+    Accuracy: 99.2%
+  </text>
+</svg>

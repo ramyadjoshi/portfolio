@@ -1,0 +1,162 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+    
+    <linearGradient id="personGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Header -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="url(#titleGradient)">
+    AI-Powered Real Time Object Detection
+  </text>
+  
+  <text x="400" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">
+    Using Pre-trained YOLOv5 Model with Bounding Box Detection
+  </text>
+  
+  <!-- Main Container -->
+  <rect x="40" y="100" width="720" height="450" rx="20" fill="url(#cardGradient)" stroke="rgba(148, 163, 184, 0.2)" stroke-width="1"/>
+  
+  <!-- Video Feed Section -->
+  <rect x="70" y="130" width="500" height="350" rx="15" fill="#000" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Live indicator -->
+  <rect x="80" y="140" width="60" height="25" rx="12" fill="#ef4444"/>
+  <circle cx="95" cy="152" r="4" fill="white">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <text x="115" y="157" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="white">LIVE</text>
+  
+  <!-- Scene background -->
+  <rect x="90" y="180" width="460" height="280" rx="10" fill="#1f2937"/>
+  <rect x="90" y="380" width="460" height="80" fill="#374151"/>
+  
+  <!-- Person 1 -->
+  <g transform="translate(200, 350)">
+    <rect x="-15" y="-50" width="30" height="70" rx="8" fill="url(#personGradient)"/>
+    <circle cx="0" cy="-60" r="15" fill="url(#personGradient)"/>
+    <rect x="-25" y="-75" width="50" height="90" rx="5" fill="none" stroke="#10b981" stroke-width="3">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-25" y="-85" width="50" height="18" rx="3" fill="#10b981"/>
+    <text x="0" y="-73" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="white">Person 0.94</text>
+  </g>
+  
+  <!-- Car -->
+  <g transform="translate(350, 400)">
+    <rect x="-40" y="-20" width="80" height="30" rx="8" fill="#dc2626"/>
+    <circle cx="-25" cy="5" r="8" fill="#374151"/>
+    <circle cx="25" cy="5" r="8" fill="#374151"/>
+    <rect x="-50" y="-25" width="100" height="40" rx="5" fill="none" stroke="#f59e0b" stroke-width="3">
+      <animate attributeName="opacity" values="1;0.6;1" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-30" y="-35" width="60" height="18" rx="3" fill="#f59e0b"/>
+    <text x="0" y="-23" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="white">Car 0.89</text>
+  </g>
+  
+  <!-- Person 2 -->
+  <g transform="translate(450, 380)">
+    <rect x="-12" y="-25" width="24" height="35" rx="6" fill="url(#personGradient)"/>
+    <circle cx="0" cy="-35" r="12" fill="url(#personGradient)"/>
+    <rect x="-20" y="-47" width="40" height="60" rx="5" fill="none" stroke="#10b981" stroke-width="3">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-20" y="-57" width="40" height="18" rx="3" fill="#10b981"/>
+    <text x="0" y="-45" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="white">Person 0.91</text>
+  </g>
+  
+  <!-- Bicycle -->
+  <g transform="translate(150, 410)">
+    <path d="M-20,0 L0,-15 L15,0 L0,0 Z" fill="none" stroke="#6b7280" stroke-width="3"/>
+    <circle cx="-20" cy="0" r="12" fill="none" stroke="#6b7280" stroke-width="2"/>
+    <circle cx="15" cy="0" r="12" fill="none" stroke="#6b7280" stroke-width="2"/>
+    <rect x="-35" y="-20" width="65" height="35" rx="5" fill="none" stroke="#8b5cf6" stroke-width="3">
+      <animate attributeName="opacity" values="1;0.6;1" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-25" y="-30" width="50" height="18" rx="3" fill="#8b5cf6"/>
+    <text x="0" y="-18" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="white">Bicycle 0.87</text>
+  </g>
+  
+  <!-- Detection Panel -->
+  <rect x="590" y="130" width="150" height="350" rx="15" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(148, 163, 184, 0.2)" stroke-width="1"/>
+  
+  <text x="665" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">
+    Detected Objects
+  </text>
+  
+  <!-- Person detection -->
+  <rect x="605" y="170" width="120" height="30" rx="5" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="1"/>
+  <text x="615" y="185" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#10b981">Person</text>
+  <text x="615" y="195" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Count: 2 | Conf: 94%</text>
+  
+  <!-- Car detection -->
+  <rect x="605" y="210" width="120" height="30" rx="5" fill="rgba(245, 158, 11, 0.2)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="615" y="225" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#f59e0b">Car</text>
+  <text x="615" y="235" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Count: 1 | Conf: 89%</text>
+  
+  <!-- Bicycle detection -->
+  <rect x="605" y="250" width="120" height="30" rx="5" fill="rgba(139, 92, 246, 0.2)" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="615" y="265" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="#8b5cf6">Bicycle</text>
+  <text x="615" y="275" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Count: 1 | Conf: 87%</text>
+  
+  <!-- Performance section -->
+  <text x="665" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">
+    Performance
+  </text>
+  
+  <rect x="605" y="320" width="120" height="40" rx="5" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="615" y="335" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#3b82f6">FPS: 45</text>
+  <text x="615" y="348" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Processing: 22ms</text>
+  <text x="615" y="355" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Resolution: 640x480</text>
+  
+  <!-- Model info -->
+  <rect x="605" y="370" width="120" height="50" rx="5" fill="rgba(16, 185, 129, 0.1)" stroke="#10b981" stroke-width="1"/>
+  <text x="665" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#10b981">YOLOv5</text>
+  <text x="665" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Pre-trained Model</text>
+  <text x="665" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">80 COCO Classes</text>
+  <text x="665" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8">Real-time Detection</text>
+  
+  <!-- Bottom stats -->
+  <rect x="70" y="500" width="500" height="40" rx="10" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(148, 163, 184, 0.2)" stroke-width="1"/>
+  
+  <text x="100" y="520" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#10b981">
+    Real-time Detection: 45 FPS
+  </text>
+  <text x="280" y="520" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#3b82f6">
+    Objects Detected: 4
+  </text>
+  <text x="450" y="520" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#f59e0b">
+    Avg Confidence: 90.25%
+  </text>
+  
+  <text x="320" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#64748b">
+    Powered by YOLOv5 | Computer Vision | Object Detection and Classification
+  </text>
+</svg>
